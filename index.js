@@ -90,6 +90,7 @@ module.exports = class client extends EventEmitter {
             this.emit('ready')
         });
     }
+
     addBot(guildID, channelID, botInfo) {
         this.bots.push({
             'serverID': guildID,
@@ -101,8 +102,6 @@ module.exports = class client extends EventEmitter {
     getInfo() {
         return this.botInfo;
     }
-
-    receiver() { return this.emit }
 
     send(id, messageToSend, cb) {
         var bot = this.bots.find(b => { return b['botInfo']['ID'] == id });

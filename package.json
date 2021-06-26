@@ -1,6 +1,6 @@
 {
   "name": "discord-communications",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A communication system the comically models TCP Communication",
   "keywords": ["Discord", "TCP", "Communication"],
   "homepage": "https://github.com/Sanjit1/discord-communications#readme",
