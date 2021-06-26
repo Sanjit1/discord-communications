@@ -1,8 +1,18 @@
 {
   "name": "discord-communications",
   "version": "1.0.0",
-  "description": "A communication system the comically models TCP(because I am bored)",
+  "description": "A communication system the comically models TCP Communication",
+  "keywords": ["Discord", "TCP", "Communication"],
+  "homepage": "https://github.com/Sanjit1/discord-communications#readme",
+  "bugs": {
+      "url": "https://github.com/Sanjit1/discord-communications/issues",
+      "email": "sanjitsarda4@gmail.com"
+  },
   "main": "index.js",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/Sanjit1/discord-communications.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
