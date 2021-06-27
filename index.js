@@ -70,14 +70,22 @@ module.exports = class client extends EventEmitter {
                     this.incomingMessages.push(msgTransaction);
                     var successInterval = setInterval(() => {
                         if (msgTransaction['state'] == 'SUCCESS') {
-                            this.emit('message', msgTransaction['message']);
+                            this.emit('message', msgTransaction);
                             clearInterval(successInterval);
+                            var i = this.incomingMessages.indexOf(msgTransaction)
+                            if (i > -1) {
+                                this.incomingMessages.splice(i, 1)
+                            }
                         }
                     }, 1000);
                     setTimeout(() => {
                         if (msgTransaction['state'] != 'SUCCESS') {
                             this.emit('messageFailed', msgTransaction);
                             clearInterval(successInterval);
+                            var i = this.incomingMessages.indexOf(msgTransaction)
+                            if (i > -1) {
+                                this.incomingMessages.splice(i, 1)
+                            }
                         }
                     }, 20000);
                     msg.channel.send(msgTransaction['code'] + msgTransaction['id'] + theta + this.botInfo['ACK']);
@@ -128,12 +136,20 @@ module.exports = class client extends EventEmitter {
             if (msgTransaction['state'] == 'SUCCESS') {
                 cb(true);
                 clearInterval(successInterval);
+                var i = this.outgoingMessages.indexOf(msgTransaction)
+                if (i > -1) {
+                    this.outgoingMessages.splice(i, 1)
+                }
             }
         }, 1000);
         var failureTimeout = setTimeout(() => {
             if (msgTransaction['state'] != 'SUCCESS') {
                 cb(false);
                 clearInterval(successInterval);
+                var i = this.outgoingMessages.indexOf(msgTransaction)
+                if (i > -1) {
+                    this.outgoingMessages.splice(i, 1)
+                }
             }
         }, 20000);
     }
