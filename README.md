@@ -77,10 +77,12 @@ client2.on('ready', () => {
 ```
 
 Discord:
+
 ![](https://cdn.discordapp.com/attachments/857739636850556948/858464231455326229/unknown.png)
 
 
 Console:
+
 ![enter image description here](https://cdn.discordapp.com/attachments/857739636850556948/858465089199145010/unknown.png)
 
 ## Usage
