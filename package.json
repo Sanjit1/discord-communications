@@ -1,17 +1,21 @@
 {
   "name": "discord-communications",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A communication system the comically models TCP Communication",
-  "keywords": ["Discord", "TCP", "Communication"],
+  "keywords": [
+    "Discord",
+    "TCP",
+    "Communication"
+  ],
   "homepage": "https://github.com/Sanjit1/discord-communications#readme",
   "bugs": {
-      "url": "https://github.com/Sanjit1/discord-communications/issues",
-      "email": "sanjitsarda4@gmail.com"
+    "url": "https://github.com/Sanjit1/discord-communications/issues",
+    "email": "sanjitsarda4@gmail.com"
   },
   "main": "index.js",
   "repository": {
-      "type": "git",
-      "url": "git://github.com/Sanjit1/discord-communications.git"
+    "type": "git",
+    "url": "git://github.com/Sanjit1/discord-communications.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
