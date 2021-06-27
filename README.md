@@ -30,124 +30,87 @@ Was a bit bored and wanted to make a funny communication system, so... I did. It
 
 ```
 
-discordComms = require('discord-communications');
+discordComms = require("discord-communications");
 
 require("dotenv/config");
 
-  
+client1 = new discordComms(
+  process.env.CLIENT1_TOKEN,
+  "855942709217984512",
+  "Sync",
+  "Ack",
+  "Fin",
+  "================================="
+);
 
-client1 = new discordComms(process.env.CLIENT1_TOKEN, '855942709217984512', 'Sync', 'Ack', 'Fin', '=================================');
+client1.addBot("818229925517590558", "857739636850556948", {
+  ID: "855867486871486496",
 
-client1.addBot('818229925517590558', '857739636850556948', {
+  SYN: "sYNC",
 
-ID: '855867486871486496',
+  ACK: "aCK",
 
-SYN: 'sYNC',
-
-ACK: 'aCK',
-
-FIN: 'fIN'
-
+  FIN: "fIN",
 });
 
-  
+client1.on("message", (m) => {
+  console.log("Client1 received a message!");
 
-client1.on('message', m => {
-
-console.log('Client1 received a message!');
-
-console.log(JSON.parse(m['message']));
-
+  console.log(JSON.parse(m["message"]));
 });
 
-  
-
-client1.on('messageFailed', m => {
-
-console.log(m)
-
+client1.on("messageFailed", (m) => {
+  console.log(m);
 });
 
-  
-  
+client2 = new discordComms(
+  process.env.CLIENT2_TOKEN,
+  "855867486871486496",
+  "sYNC",
+  "aCK",
+  "fIN",
 
-client2 = new discordComms(process.env.CLIENT2_TOKEN, '855867486871486496', 'sYNC', 'aCK', 'fIN',
+  ":grinning: :grinning: :grinning: :grinning: :grinning: :grinning:"
+);
 
-':grinning: :grinning: :grinning: :grinning: :grinning: :grinning:');
+client2.addBot("818229925517590558", "857739636850556948", {
+  ID: "855942709217984512",
 
-  
+  SYN: "Sync",
 
-client2.addBot('818229925517590558', '857739636850556948', {
+  ACK: "Ack",
 
-ID: '855942709217984512',
-
-SYN: 'Sync',
-
-ACK: 'Ack',
-
-FIN: 'Fin'
-
+  FIN: "Fin",
 });
 
-  
+const veryLargeObject = [
+  [
+    true,
 
-const veryLargeObject = [[
+    206524755.7646594,
 
-true,
+    "watch",
 
-206524755.7646594,
+    {
+      recent: 1919212481.4359708,
 
-"watch",
+      of: -1234194671,
 
-{
+      job: "fireplace",
 
-"recent": 1919212481.4359708,
+      fastened: "tongue",
 
-"of": -1234194671,
+      prepare: [false, 422601777.6562691, "tower", "powerful", true],
+    },
 
-"job": "fireplace",
+    [false, 83278634.86709356, 1508958168.5165505, false, false],
+  ],
+];
 
-"fastened": "tongue",
-
-"prepare": [
-
-false,
-
-422601777.6562691,
-
-"tower",
-
-"powerful",
-
-true
-
-]
-
-},
-
-[
-
-false,
-
-83278634.86709356,
-
-1508958168.5165505,
-
-false,
-
-false
-
-]
-
-]];
-
-  
-
-client2.on('ready', () => {
-
-client2.send('855942709217984512', veryLargeObject, sc => console.log(sc));
-
+client2.on("ready", () => {
+  client2.send("855942709217984512", veryLargeObject, (sc) => console.log(sc));
 });
+
 
 ```
 

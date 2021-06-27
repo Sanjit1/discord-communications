@@ -1,6 +1,6 @@
 {
   "name": "discord-communications",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A communication system the comically models TCP Communication",
   "keywords": [
     "Discord",
